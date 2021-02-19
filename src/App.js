@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import FetchData from "./FetchData";
 
 function App() {
+  const [counter, setcounter] = React.useState(0);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>This is my React App</h1>
+      <div id="counter-value">{counter}</div>
+      <button id="increment-btn" onClick={() => setcounter(counter + 1)}>
+        Increment
+      </button>
+      <button id="decrement-btn" onClick={() => setcounter(counter - 1)}>
+        Decrement
+      </button>
+      <br />
+      <br />
+      <br />
+      <FetchData />
     </div>
   );
 }
